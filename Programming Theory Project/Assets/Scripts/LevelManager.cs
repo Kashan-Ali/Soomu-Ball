@@ -9,10 +9,14 @@ using UnityEditor;
 
 public class LevelManager : MonoBehaviour
 {
-
     public void GameStart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void SetPlayerName(Text inputTxt)
+    {
+        GameManager.Instance.playername = inputTxt.text;
     }
 
     public void SettingMenu()
@@ -25,14 +29,9 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    public void SetPlayerName(Text inputTxt)
+    public void Restart()
     {
-        GameManager.Instance.playername = inputTxt.text;
-    }
-
-    public void GamePause()
-    {
-        Time.timeScale = 0;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void Exit()
@@ -43,4 +42,5 @@ public class LevelManager : MonoBehaviour
         Application.Quit();
 #endif
     }
+
 }

@@ -6,18 +6,12 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    //  Fieldes
+    //  Fields
     public string playername;
     private string bestName;
     public int highScore;
     public int maxWave;
-
-    //  Properties
-    public string BestName
-    {
-        get { return bestName; }
-        set { bestName = value; }
-    }
+    // end Fields
 
     private void Awake()
     {
