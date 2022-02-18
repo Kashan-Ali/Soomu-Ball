@@ -15,7 +15,7 @@ public class MainManager : MonoBehaviour
     [SerializeField] private TMP_Text _bestScore;
     [SerializeField] private TMP_Text _bestWave;
     
-    [SerializeField] private SpawnManager _SpawnManager;
+    private SpawnManager _SpawnManager;
 
     private void OnEnable()
     {
@@ -62,7 +62,6 @@ public class MainManager : MonoBehaviour
         if (_SpawnManager.score > GameManager.Instance.highScore)
         {
             GameManager.Instance.SaveHighScore(GameManager.Instance.playername, _SpawnManager.score, _SpawnManager.wave);
-            Debug.Log(GameManager.Instance.playername);
         }
     }
 }

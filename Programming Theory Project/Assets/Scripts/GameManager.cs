@@ -44,9 +44,6 @@ public class GameManager : MonoBehaviour
 
         string createData = JsonUtility.ToJson(data);
         File.WriteAllText(Application.persistentDataPath + "/savefile.json", createData);
-
-        Debug.Log(Application.persistentDataPath + "/savefile.json");
-        Debug.Log(createData);
     }
 
     public void LoadHighScore()

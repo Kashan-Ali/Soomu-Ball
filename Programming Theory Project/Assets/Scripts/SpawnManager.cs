@@ -6,12 +6,12 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject enemyPrefab;
     public GameObject powerupPrefab;
-    public int enemyCount;
+    [HideInInspector] public int enemyCount;
     public int score = 0;
     public int wave = 1;
 
     // Start is called before the first frame update
-    private void Start()
+    private void OnEnable()
     {
         EnemySpawnWave(wave);
         PowerupSpawn();

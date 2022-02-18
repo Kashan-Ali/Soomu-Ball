@@ -10,8 +10,7 @@ public class PlayerController : MonoBehaviour
 
     private GameObject _focalPoint;
     private Rigidbody _playerRB;
-    [SerializeField]
-    private bool _hasPowerup = false;
+    [SerializeField] private bool _hasPowerup = false;
     private float _powerupStrength = 20;
     private float _powerupTiming = 10;
 

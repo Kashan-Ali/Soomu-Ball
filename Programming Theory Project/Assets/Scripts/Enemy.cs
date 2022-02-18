@@ -8,7 +8,6 @@ public class Enemy : MonoBehaviour
 
     private Rigidbody _enemyRB;
     private GameObject _player;
-
     private SpawnManager _SpawnManager;
 
     // Start is called before the first frame update
