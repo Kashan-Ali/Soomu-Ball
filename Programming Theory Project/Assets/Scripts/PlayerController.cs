@@ -74,6 +74,7 @@ public class PlayerController : MonoBehaviour
         if (transform.position.y < -7)
         {
             _UIManager.GameOver();
+            _MainManager.ShowFinalScore();
             _MainManager.SetBestScore();
             //  GameManager.Instance.SaveHighScore(null, 0, 0);
             Destroy(gameObject);

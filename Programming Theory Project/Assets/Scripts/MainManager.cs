@@ -14,6 +14,12 @@ public class MainManager : MonoBehaviour
     [SerializeField] private TMP_Text _bestName;
     [SerializeField] private TMP_Text _bestScore;
     [SerializeField] private TMP_Text _bestWave;
+
+    [Header("GameOver Player States.")]
+    [SerializeField] private TMP_Text _highScoreLogo;
+    [SerializeField] private TMP_Text _finalName;
+    [SerializeField] private TMP_Text _finalScore;
+    [SerializeField] private TMP_Text _finalWave;
     
     private SpawnManager _SpawnManager;
 
@@ -62,6 +68,18 @@ public class MainManager : MonoBehaviour
         if (_SpawnManager.score > GameManager.Instance.highScore)
         {
             GameManager.Instance.SaveHighScore(GameManager.Instance.playername, _SpawnManager.score, _SpawnManager.wave);
+            _highScoreLogo.enabled = true;
         }
+        else
+        {
+            _highScoreLogo.enabled = false;
+        }
+    }
+
+    public void ShowFinalScore()
+    {
+        _finalName.text = _finalName.text.ToUpper() + GameManager.Instance.playername.ToUpper();
+        _finalScore.text = _finalScore.text.ToUpper() + _SpawnManager.score.ToString();
+        _finalWave.text = _finalWave.text.ToUpper() + _SpawnManager.wave.ToString();
     }
 }
