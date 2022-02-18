@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 432679627609076314}
   - component: {fileID: 432679627607749242}
   - component: {fileID: 432679627606651066}
-  - component: {fileID: 3699158359611400064}
+  - component: {fileID: 3111456305817649289}
   m_Layer: 0
   m_Name: Powerup
   m_TagString: Powerup
@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 432679627608583802}
   m_LocalRotation: {x: -0.21515773, y: -0.6346889, z: -0.19035544, w: 0.7173855}
-  m_LocalPosition: {x: 2.9989192, y: 0.05, z: 9.400887}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 2.9989192, y: -0.5, z: 9.400887}
+  m_LocalScale: {x: 2.8, y: 2.8, z: 2.8}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -82,8 +82,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3699158359611400064
-BoxCollider:
+--- !u!135 &3111456305817649289
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -93,5 +93,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.19234498, y: 0.49284136, z: 0.19001502}
+  m_Radius: 0.35
   m_Center: {x: 0, y: 0, z: 0}

@@ -14,16 +14,23 @@ public class PlayerController : MonoBehaviour
     private bool _hasPowerup = false;
     private float _powerupStrength = 20;
     private float _powerupTiming = 10;
-    
-    private void Start()
+
+    private UIManager _UIManager;
+    private MainManager _MainManager;
+
+
+    private void OnEnable()
     {
         _playerRB = GetComponent<Rigidbody>();
         _focalPoint = GameObject.Find("Focal Point");
+        _UIManager = FindObjectOfType<UIManager>();
+        _MainManager = FindObjectOfType<MainManager>();
     }
 
     private void Update()
     {
         MovePlayer();
+        OffTheGround();
         powerupIndicator.transform.position = transform.position + powerupIndicatorOffset;
     }
 
@@ -60,6 +67,17 @@ public class PlayerController : MonoBehaviour
             Vector3 _bounceByPlayer = collision.transform.position - transform.position;
 
             _enemyRB.AddForce(_bounceByPlayer * _powerupStrength, ForceMode.Impulse);
+        }
+    }
+
+    private void OffTheGround()
+    {
+        if (transform.position.y < -7)
+        {
+            _UIManager.GameOver();
+            _MainManager.SetBestScore();
+            //  GameManager.Instance.SaveHighScore(null, 0, 0);
+            Destroy(gameObject);
         }
     }
 }
