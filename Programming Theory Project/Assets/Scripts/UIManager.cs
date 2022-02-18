@@ -12,8 +12,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject hUD;
     [SerializeField] private GameObject resumeMenu;
     [SerializeField] private GameObject GameoverMenu;
-
-
     private void Update()
     {
         GamePlayState();

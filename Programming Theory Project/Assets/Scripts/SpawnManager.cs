@@ -7,12 +7,13 @@ public class SpawnManager : MonoBehaviour
     public GameObject enemyPrefab;
     public GameObject powerupPrefab;
     public int enemyCount;
-    public int Difficulty = 1;
+    public int score = 0;
+    public int wave = 1;
 
     // Start is called before the first frame update
     private void Start()
     {
-        EnemySpawnWave(Difficulty);
+        EnemySpawnWave(wave);
         PowerupSpawn();
     }
 
@@ -48,8 +49,8 @@ public class SpawnManager : MonoBehaviour
         enemyCount = FindObjectsOfType<Enemy>().Length;
         if (enemyCount == 0)
         {
-            Difficulty++;
-            EnemySpawnWave(Difficulty);
+            wave++;
+            EnemySpawnWave(wave);
             PowerupSpawn();
         }
     }
