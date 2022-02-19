@@ -1624,9 +1624,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf42e34180b5aaf4aa74e9b9b693b0a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 6495393994577988659, guid: 0c0b64a2bf007914ca844508d28c06ba, type: 3}
-  powerupPrefab: {fileID: 432679627608583802, guid: ece3a9b1dcbd85549a6cc2d7817a273a, type: 3}
-  enemyCount: 0
+  _lightEnemyPrefab: {fileID: 3594712530612308671, guid: 2b42e165f12ad2b4daa25b9bee7299c7, type: 3}
+  _mediumEnemyPrefab: {fileID: 8158415624743459329, guid: 8c3f08b4941dfad4ab721f4d733e0557, type: 3}
+  _heavyEnemyPrefab: {fileID: 2722871315287229851, guid: c0ae9b09972a9904795d3c686539562a, type: 3}
+  _powerupPrefab: {fileID: 432679627608583802, guid: ece3a9b1dcbd85549a6cc2d7817a273a, type: 3}
   score: 0
   wave: 1
 --- !u!4 &4711406198419353099

@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject enemyPrefab;
-    public GameObject powerupPrefab;
-    [HideInInspector] public int enemyCount;
-    public int score = 0;
-    public int wave = 1;
+    [Header("Types of Enemys")]
+    //  public GameObject enemyPrefab;
+    [SerializeField] private GameObject _lightEnemyPrefab;
+    [SerializeField] private GameObject _mediumEnemyPrefab;
+    [SerializeField] private GameObject _heavyEnemyPrefab;
+
+    [SerializeField] private GameObject _powerupPrefab;
+    private int _enemyCount;
+    // Current Player States
+    [HideInInspector] public int score = 0;
+    [HideInInspector] public int wave = 1;
 
     // Start is called before the first frame update
     private void OnEnable()
@@ -32,22 +38,24 @@ public class SpawnManager : MonoBehaviour
 
     private void PowerupSpawn()
     {
-        Instantiate(powerupPrefab, RandomPosition(), powerupPrefab.transform.rotation);
+        Instantiate(_powerupPrefab, RandomPosition(), _powerupPrefab.transform.rotation);
     }
 
     private void EnemySpawnWave(int enemiesToSpawn)
     {
         for(int count = 0; count < enemiesToSpawn; count++)
         {
-            Instantiate(enemyPrefab, RandomPosition(), enemyPrefab.transform.rotation);
+            Instantiate(_lightEnemyPrefab, RandomPosition(), _lightEnemyPrefab.transform.rotation);
+            //  Instantiate(_mediumEnemyPrefab, RandomPosition(), _mediumEnemyPrefab.transform.rotation);
+            //  Instantiate(_heavyEnemyPrefab, RandomPosition(), _heavyEnemyPrefab.transform.rotation);
         }
     }
 
     private void WaveCount()
     {
         // Find Enemy Object(Script) from assets.
-        enemyCount = FindObjectsOfType<Enemy>().Length;
-        if (enemyCount == 0)
+        _enemyCount = FindObjectsOfType<Enemy>().Length;
+        if (_enemyCount == 0)
         {
             wave++;
             EnemySpawnWave(wave);

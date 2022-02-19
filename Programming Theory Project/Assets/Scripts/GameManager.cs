@@ -6,6 +6,7 @@ using System.IO;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    // Currnet Player Name
     public string playername;
 
     //  for load best player states.

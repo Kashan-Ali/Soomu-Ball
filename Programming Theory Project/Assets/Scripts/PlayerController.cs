@@ -76,8 +76,10 @@ public class PlayerController : MonoBehaviour
             _UIManager.GameOver();
             _MainManager.ShowFinalScore();
             _MainManager.SetBestScore();
-            //  GameManager.Instance.SaveHighScore(null, 0, 0);
             Destroy(gameObject);
+
+            //  For Reset Best State for testing
+            //  GameManager.Instance.SaveHighScore(null, 0, 0);
         }
     }
 }

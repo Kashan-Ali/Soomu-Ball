@@ -6,7 +6,9 @@ public class Enemy : MonoBehaviour
 {
     public float speed = 50;
 
-    private Rigidbody _enemyRB;
+    protected Vector3 _lookDirection;
+    protected Rigidbody _enemyRB;
+
     private GameObject _player;
     private SpawnManager _SpawnManager;
 
@@ -22,19 +24,27 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        MoveTowardsDirection();
+        LookAtDirection();
         OffTheGround();
     }
 
-    private void MoveTowardsDirection()
+    private void FixedUpdate()
+    {
+        MoveTowardsDirection();
+    }
+
+    private void LookAtDirection()
     {
 
         if (_player == null)
             return;
 
         // Distance Direction Calculation.
-        Vector3 _lookDirection = (_player.transform.position - transform.position).normalized;
-        _enemyRB.AddForce(_lookDirection * speed * Time.deltaTime);
+        _lookDirection = (_player.transform.position - transform.position).normalized;
+    }
+
+    protected virtual void MoveTowardsDirection()
+    {
     }
 
     private void OffTheGround()
